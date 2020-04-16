@@ -1,0 +1,26 @@
+<div class="container">
+<br>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">See</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.nombreProducto}}</td>
+        <td>{{product.precio}}</td>
+        <td><button class="btn btn-primary btn-sm" routerLink="/detalle/{{product.id}}">See</button></td>
+        <td><button class="btn btn-warning btn-sm" routerLink="/editar/{{product.id}}">Edit</button></td>
+        <td><button class="btn btn-danger btn-sm">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
