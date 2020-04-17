@@ -18,11 +18,22 @@ export class ListProductsComponent implements OnInit {
   }
 
   loadProducts() {
-    this.productService.getList().subscribe(data => {
-      this.products = data;
-    }, (err: any) => {
+    this.productService.getList().subscribe(
+      data => {
+        this.products = data;
+      }, (err: any) => {
       console.log(err);
     });
+  }
+
+  onDelete(id: number) {
+    if (confirm('Are you sure?')) {
+      this.productService.deleteProduct(id).subscribe(
+        data => {
+          this.loadProducts();
+        }
+      );
+    }
   }
 
 }
