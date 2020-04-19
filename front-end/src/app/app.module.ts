@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailProductsComponent } from './components/detail-products/detail-products.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     HomeComponent,
     DetailProductsComponent,
     NewProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

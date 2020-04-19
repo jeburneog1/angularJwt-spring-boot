@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Producto } from './../models/producto';
 
 const cabecera = { headers: new HttpHeaders({ 'Content-TYpe': 'application/json' }) };
+console.log(cabecera);
 
 
 @Injectable({
@@ -17,6 +18,7 @@ export class ProductoService {
 
   public getList(): Observable<Producto[]> {
     return this.httpClient.get<Producto[]>(this.productoUrl + '/lista', cabecera);
+    console.log(this.productoUrl);
   }
 
   public getDetail(id: number): Observable<Producto> {
