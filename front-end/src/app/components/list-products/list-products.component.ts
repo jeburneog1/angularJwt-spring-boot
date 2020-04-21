@@ -1,6 +1,6 @@
 import { ProductoService } from './../../services/producto.service';
 import { Producto } from './../../models/producto';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-products',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-products.component.css']
 })
 export class ListProductsComponent implements OnInit {
+
+  @Input() user: string;
 
   products: Producto[] = [];
 

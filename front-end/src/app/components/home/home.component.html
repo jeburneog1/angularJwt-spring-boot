@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div *ngIf="info.token; else loggedOut">
+  <div class="container">
+    <p><strong>Name user: </strong><strong>{{info.nombreUsuario}}</strong></p>
+    <p><strong>This is the Token:</strong>{{info.token}}</p>
+    <p><strong>Privileges</strong>{{info.authorities}}</p>
+  </div>
+</div>
+
+<ng-template #loggedOut>
+  <div class="container">
+    You have not logged in
+  </div>
+</ng-template>

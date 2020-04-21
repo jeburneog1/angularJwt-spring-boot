@@ -1,3 +1,4 @@
+import { interceptorProvider } from './services/product-interceptor.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,7 +11,9 @@ import { DetailProductsComponent } from './components/detail-products/detail-pro
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { UserComponent } from './components/user/user.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { LoginComponent } from './components/login/login.component';
     DetailProductsComponent,
     NewProductComponent,
     EditProductComponent,
-    LoginComponent
+    LoginComponent,
+    UserComponent,
+    AdminComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,7 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule
 
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

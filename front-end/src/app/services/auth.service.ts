@@ -12,15 +12,15 @@ const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})
 })
 export class AuthService {
 
-  private authUrl = 'localhost:8085/api/auth';
+  private authUrl = 'http://localhost:8085/api/auth';
 
   constructor(private httpClient: HttpClient) { }
 
-  public login(user: LoginUser): Observable<JwtModel> {
-    return this.httpClient.post<JwtModel>(this.authUrl + 'login', user, cabecera);
+  public login(usuario: LoginUser): Observable<JwtModel> {
+    return this.httpClient.post<JwtModel>(this.authUrl + '/login', usuario, cabecera);
   }
 
-  public register(user: NewUser): Observable<any> {
-    return this.httpClient.post<any>(this.authUrl + 'nuevo', user, cabecera);
+  public register(usuario: NewUser): Observable<any> {
+    return this.httpClient.post<any>(this.authUrl + '/nuevo', usuario, cabecera);
   }
 }

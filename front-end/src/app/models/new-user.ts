@@ -9,6 +9,7 @@ export class NewUser {
     this.nombre = nombre;
     this.nombreUsuario = nombreUsuario;
     this.email = email;
+    this.password = password;
     this.roles = ['user'];
   }
 }

@@ -18,7 +18,6 @@ export class ProductoService {
 
   public getList(): Observable<Producto[]> {
     return this.httpClient.get<Producto[]>(this.productoUrl + '/lista', cabecera);
-    console.log(this.productoUrl);
   }
 
   public getDetail(id: number): Observable<Producto> {

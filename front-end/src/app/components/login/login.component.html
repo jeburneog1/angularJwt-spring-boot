@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div *ngIf="isLogged; else loggedOut">
+  Has iniciado sesión como: {{roles}}
+</div>
+
+<ng-template #loggedOut>
+  <div *ngIf="!isLogged" class="container">
+    <h5>Login</h5>
+    <form name="form" #f="ngForm" novalidate (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label for="nombreUsuario">Name User: </label>
+        <input type="text" class="form-control" name="nombreUsuario" [(ngModel)]="form.nombreUsuario"
+        autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="form.password"
+        autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success" [disabled]="!f.valid">Login</button>
+        <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">Fail: {{errorMsg}}</div>
+        <a routerLink="/registro"><button class="btn btn-primary float-right">Create a account</button></a>
+        <p class="float-right mr-3">¿Don't have an account?</p>
+      </div>
+    </form>
+
+  </div>
+
+</ng-template>
